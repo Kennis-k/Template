@@ -1,0 +1,160 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+    {% if title %}{{ title }} - Microblog{% else %}Welcome to Microblog{% endif %}
+{% endblock %}
+
+{% block styles %}
+    {{ super() }}
+    <style>
+        .btn-circle {
+            margin: 5px 5px 5px 5px;
+            width: 40px;
+            height: 40px;
+            padding: 6px 0px;
+            border-radius: 20px;
+            text-align: center;
+        "
+        }
+
+        collapsing {
+            width: 0;
+            transition-property: width;
+            height: 100%;
+            white-space: nowrap;
+        }
+
+        . hide {
+            display: none;
+        }
+
+        .myDIV:hover + . hide {
+            display: block;
+            color: red;
+        }
+
+        navbarToggleExternalContent {
+            transform: translateX(-100%);
+            transition: transform .35s ease;
+            display: block;
+            height: 100%;
+            min-height: 100%;
+        }
+
+        #navbarToggleExternalContent h6 {
+            display: block;
+            color: black;
+            text-align: left;
+            padding: 5px 8px;
+            text-decoration: none;
+            font-size: 13px;
+
+        }
+
+        #navbarToggleExternalContent li {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 5px 8px;
+            text-decoration: none;
+            font-size: 13px;
+            border-bottom: 3px solid transparent;
+        }
+
+        . navbarToggleExternalContent. menu-show {
+            transform: translateX(0%);
+        }
+
+        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+        row. content {
+            height: 450px
+        }
+
+        /* Set gray background color and 100% height */
+        . sidenav {
+            padding-top: 20px;
+            background-color: #f1f1f1;
+            height: 100%;
+        }
+
+        /* Set black background color, white text and some padding */
+        footer {
+            background-color: #555;
+            color: white;
+            padding: 15px;
+        }
+
+        /* On small screens, set height to 'auto' for sidenav and grid */
+        @media screen and (max-width: 767px) {
+            . sidenav {
+                height: auto;
+                padding: 15px;
+            }
+
+            row. content {
+                height: auto;
+            }
+
+
+    </style>
+{% endblock %}
+
+{% block navbar %}
+    <div class="container"></div>
+    <nav class="navbar navbar-default " role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed btn-circle" data-toggle="collapse"
+                        data-target="#navbarToggleExternalContent"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <button class="navbar-brand" type="button" data-toggle="collapse"
+                        data-target="#navbarToggleExternalContent" style="margin-left: 165px">
+                    <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul id="listtop" class="nav navbar-nav navbar-right">
+                    <li>
+                        <button type="button" class="btn btn-circle btn-sm" href="#"><span
+                                class="glyphicon glyphicon-home" aria-hidden="true"></span></button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-circle btn-sm" href="#"><span
+                                class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                            </a>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-circle btn-sm" href="#"><span
+                                class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-circle btn-sm" href="#"><span
+                                class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-centered" action="#" method="GET"
+                      style="float: none; position: absolute; top: 34%; left: 50%; transform: translate(-50%, -50%)">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="query" name="search"
+                               value="">
+                        <div class="input-group-btn">
+                            <button type="submit" class="btn btn-success"><span
+                                    class="glyphicon glyphicon-search"></span></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+
+{% endblock %}
